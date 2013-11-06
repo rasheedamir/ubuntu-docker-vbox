@@ -6,6 +6,9 @@ Packer.io is needed to build the image.
 Installation instructions are available on the [packer.io](http://www.packer.io/intro/getting-started/setup.html) website.
 
 ##Build
+
+In my personal experience I've had Packer fail towards the end of the process if a VirtualBox is running with a conflicting name. I try and make sure all of my VirtualBox instances are shutdown prior to building.
+
 Build the packer template:
 
 ```
@@ -28,7 +31,7 @@ There are currently no automated tests around verifying the images. Currently te
 
 ##Deploy
 
-Currently we share these virtualmachine boxes through S3 meltmedia-public-boxes (which account is this on?). Once uploaded to S3 any Vagrantfile can reference the box via the S3 url.
+Currently we share these virtualmachine boxes through S3 meltmedia-public-boxes. Once uploaded to S3 any Vagrantfile can reference the box via the S3 url.
 
 ##How to update/re-create:
 
