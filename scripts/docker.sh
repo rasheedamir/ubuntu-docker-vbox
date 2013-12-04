@@ -9,5 +9,5 @@ apt-get -y update
 # Install, you will see another warning that the package cannot be authenticated. Confirm install.
 apt-get -y install lxc-docker-0.7.0
 
-sed -i "s~^.*/usr/bin/docker -d~  /usr/bin/docker -d -r -H 'unix:///var/run/docker.sock' -H 'tcp://0.0.0.0:4243' -api-enable-cors~" /etc/init/docker.conf
+cat 'DOCKER_OPTS="-r -H unix:///var/run/docker.sock -H tcp://0.0.0.0:4243 -api-enable-cors"' /etc/default/docker
 service docker restart
